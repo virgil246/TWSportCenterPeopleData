@@ -19,9 +19,17 @@ func main() {
 	loc := []string{"cs", "ng", "xy", "da", "ws", "nh",
 		"lzc", "tcc", "xzc", "yhc", "cmc", "zlc", "tyc", "zgc", "lkc"}
 	// locPair := getchinese(loc)
+	t := time.Now()
+	s := time.Date(t.Year(), t.Month(), t.Day(), 6, 0, 0, 0, t.Location())
+	e := time.Date(t.Year(), t.Month(), t.Day(), 22, 0, 0, 0, t.Location())
+	fmt.Println(t.Sub(s))
+	fmt.Println(t.Sub(e))
 	for x := range time.Tick(10 * time.Second) {
-		fmt.Println(x)
-		queryeach(loc)
+		if t.Sub(s) > 0 && t.Sub(e) < 0 {
+			fmt.Println(x)
+			queryeach(loc)
+		}
+
 	}
 }
 func queryeach(loc []string) {
