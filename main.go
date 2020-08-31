@@ -37,9 +37,6 @@ func queryeach(loc []string) {
 	fileWrite(out)
 
 }
-func doEvery(d time.Duration, f func()) {
-
-}
 func fileWrite(data []byte) {
 	// fmt.Println(string(data))
 	timestamp := time.Now().Format("20060102_15-04-05")
