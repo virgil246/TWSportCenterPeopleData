@@ -19,6 +19,12 @@ func main() {
 	loc := []string{"cs", "ng", "xy", "da", "ws", "nh",
 		"lzc", "tcc", "xzc", "yhc", "cmc", "zlc", "tyc", "zgc", "lkc"}
 	// locPair := getchinese(loc)
+	for x := range time.Tick(10 * time.Second) {
+		fmt.Println(x)
+		queryeach(loc)
+	}
+}
+func queryeach(loc []string) {
 	var data []interface{}
 
 	for _, l := range loc {
@@ -28,11 +34,17 @@ func main() {
 	}
 
 	out, _ := json.MarshalIndent(data, "", " ")
-	fmt.Println(string(out))
+	fileWrite(out)
+
+}
+func doEvery(d time.Duration, f func()) {
+
+}
+func fileWrite(data []byte) {
+	// fmt.Println(string(data))
 	timestamp := time.Now().Format("20060102_15-04-05")
 	filename := timestamp + ".json"
-	ioutil.WriteFile(filename, out, os.ModePerm)
-
+	ioutil.WriteFile(filename, data, os.ModePerm)
 }
 func getchinese(loc []string) (place map[string]string) {
 	place = make(map[string]string)
