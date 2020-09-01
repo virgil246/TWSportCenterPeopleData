@@ -1,0 +1,37 @@
+name: Go
+
+on:
+  push:
+    branches: [ running ]
+  schedule:
+    - cron: '* * * * *'
+
+      
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.15
+      id: go
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+
+    - name: Get dependencies
+      run: |
+        go get -v github.com/PuerkitoBio/goquery
+       
+    - name: Build
+      run: go run -v .
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
