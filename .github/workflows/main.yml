@@ -1,8 +1,6 @@
 name: MinuteUpdate
 
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: '*/1 * * * *'
 
