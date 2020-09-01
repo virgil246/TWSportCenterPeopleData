@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/PuerkitoBio/goquery"
 )
@@ -28,10 +29,14 @@ func queryeach(loc []string) {
 	for _, l := range loc {
 		//TODO go routine
 
-		people := fetch(l)
-		fmt.Println(people)
-		people.ChLoc = locPair[l]
-		data = append(data, people)
+		people, ok := fetch(l)
+		if ok {
+			fmt.Println(people)
+			people.ChLoc = locPair[l]
+			data = append(data, people)
+		} else {
+			continue
+		}
 
 	}
 	fmt.Println(data)
@@ -74,26 +79,29 @@ func getTitle(res *http.Response) (title string) {
 	return title
 
 }
-func fetch(loc string) (people People) {
+func fetch(loc string) (People, bool) {
+	var people People
 	var link url.URL
 	link.Scheme = "https"
 	link.Path = "api"
 
 	link.Host = loc + "sc.cyc.org.tw"
-	resp, err := http.Get(link.String())
+	client := http.Client{Timeout: 3 * time.Second}
+	resp, err := client.Get(link.String())
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err.Error())
+		return people, false
 	}
 	defer resp.Body.Close()
 	sitemap, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err.Error())
 	}
 	fmt.Println(string(sitemap))
 	people.Loc = loc
 	json.Unmarshal(sitemap, &people)
 
-	return people
+	return people, true
 }
 
 type People struct {
