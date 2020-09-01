@@ -31,7 +31,7 @@ func queryeach(loc []string) {
 
 		people, ok := fetch(l)
 		if ok {
-			fmt.Println(people)
+			// fmt.Println(people)
 			people.ChLoc = locPair[l]
 			data = append(data, people)
 		} else {
@@ -39,7 +39,7 @@ func queryeach(loc []string) {
 		}
 
 	}
-	fmt.Println(data)
+	// fmt.Println(data)
 	out, _ := json.MarshalIndent(data, "", " ")
 	fileWrite(out)
 
@@ -97,7 +97,7 @@ func fetch(loc string) (People, bool) {
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	fmt.Println(string(sitemap))
+	// fmt.Println(string(sitemap))
 	people.Loc = loc
 	json.Unmarshal(sitemap, &people)
 
