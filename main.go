@@ -18,37 +18,36 @@ func main() {
 
 	loc := []string{"cs", "ng", "xy", "da", "ws", "nh",
 		"lzc", "tcc", "xzc", "yhc", "cmc", "zlc", "tyc", "zgc", "lkc"}
-	// locPair := getchinese(loc)
-	t := time.Now()
-	s := time.Date(t.Year(), t.Month(), t.Day(), 6, 0, 0, 0, t.Location())
-	e := time.Date(t.Year(), t.Month(), t.Day(), 22, 0, 0, 0, t.Location())
-	fmt.Println(t.Sub(s))
-	fmt.Println(t.Sub(e))
-	for x := range time.Tick(10 * time.Second) {
-		if t.Sub(s) > 0 && t.Sub(e) < 0 {
-			fmt.Println(x)
-			queryeach(loc)
-		}
 
-	}
+	queryeach(loc)
+
 }
 func queryeach(loc []string) {
 	var data []interface{}
+	locPair := getchinese(loc)
 
 	for _, l := range loc {
 		//TODO go routine
-		data = append(data, fetch(l))
+
+		people, ok := fetch(l)
+		if ok {
+			fmt.Println(people)
+			people.ChLoc = locPair[l]
+			data = append(data, people)
+		} else {
+			continue
+		}
 
 	}
-
+	fmt.Println(data)
 	out, _ := json.MarshalIndent(data, "", " ")
 	fileWrite(out)
 
 }
 func fileWrite(data []byte) {
 	// fmt.Println(string(data))
-	timestamp := time.Now().Format("20060102_15-04-05")
-	filename := timestamp + ".json"
+	// timestamp := time.Now().Format("20060102_15-04-05")
+	filename := "output.json"
 	ioutil.WriteFile(filename, data, os.ModePerm)
 }
 func getchinese(loc []string) (place map[string]string) {
@@ -80,33 +79,37 @@ func getTitle(res *http.Response) (title string) {
 	return title
 
 }
-func fetch(loc string) (people People) {
+func fetch(loc string) (People, bool) {
+	var people People
 	var link url.URL
 	link.Scheme = "https"
 	link.Path = "api"
 
 	link.Host = loc + "sc.cyc.org.tw"
-	resp, err := http.Get(link.String())
+	client := http.Client{Timeout: 3 * time.Second}
+	resp, err := client.Get(link.String())
 	if err != nil {
-
+		fmt.Println(err.Error())
+		return people, false
 	}
 	defer resp.Body.Close()
 	sitemap, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-
+		fmt.Println(err.Error())
 	}
-	// fmt.Println(string(sitemap))
+	fmt.Println(string(sitemap))
 	people.Loc = loc
 	json.Unmarshal(sitemap, &people)
 
-	return people
+	return people, true
 }
 
 type People struct {
-	Loc  string
-	Gym  Nums `json:"gym"`
-	Swim Nums `json:"swim"`
-	Ice  Nums `json:"ice"`
+	Loc   string
+	ChLoc string
+	Gym   Nums `json:"gym"`
+	Swim  Nums `json:"swim"`
+	Ice   Nums `json:"ice"`
 }
 type Nums struct {
 	Now int
