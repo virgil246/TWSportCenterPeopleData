@@ -3,11 +3,11 @@
   "Loc": "cs",
   "ChLoc": "中山運動中心",
   "gym": {
-   "Now": 2,
+   "Now": 0,
    "Max": 50
   },
   "swim": {
-   "Now": 3,
+   "Now": 0,
    "Max": 100
   },
   "ice": {
@@ -19,7 +19,7 @@
   "Loc": "xy",
   "ChLoc": "信義運動中心",
   "gym": {
-   "Now": 2,
+   "Now": 0,
    "Max": 65
   },
   "swim": {
@@ -51,7 +51,7 @@
   "Loc": "ws",
   "ChLoc": "文山運動中心",
   "gym": {
-   "Now": 2,
+   "Now": 0,
    "Max": 62
   },
   "swim": {
@@ -67,7 +67,7 @@
   "Loc": "nh",
   "ChLoc": "內湖運動中心",
   "gym": {
-   "Now": 8,
+   "Now": 0,
    "Max": 99
   },
   "swim": {
@@ -131,11 +131,11 @@
   "Loc": "yhc",
   "ChLoc": "永和國民運動中心",
   "gym": {
-   "Now": 1,
+   "Now": 0,
    "Max": 55
   },
   "swim": {
-   "Now": 14,
+   "Now": 0,
    "Max": 300
   },
   "ice": {
@@ -179,11 +179,11 @@
   "Loc": "tyc",
   "ChLoc": "桃園國民運動中心",
   "gym": {
-   "Now": 4,
+   "Now": 0,
    "Max": 90
   },
   "swim": {
-   "Now": 3,
+   "Now": 0,
    "Max": 120
   },
   "ice": {
