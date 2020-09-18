@@ -3,11 +3,11 @@
   "Loc": "cs",
   "ChLoc": "中山運動中心",
   "gym": {
-   "Now": 3,
+   "Now": 0,
    "Max": 50
   },
   "swim": {
-   "Now": 7,
+   "Now": 3,
    "Max": 100
   },
   "ice": {
@@ -23,7 +23,7 @@
    "Max": 85
   },
   "swim": {
-   "Now": 28,
+   "Now": 19,
    "Max": 100
   },
   "ice": {
@@ -35,11 +35,11 @@
   "Loc": "xy",
   "ChLoc": "信義運動中心",
   "gym": {
-   "Now": 6,
+   "Now": 3,
    "Max": 65
   },
   "swim": {
-   "Now": 12,
+   "Now": 0,
    "Max": 100
   },
   "ice": {
@@ -51,7 +51,7 @@
   "Loc": "da",
   "ChLoc": "大安運動中心",
   "gym": {
-   "Now": 12,
+   "Now": 0,
    "Max": 70
   },
   "swim": {
@@ -67,7 +67,7 @@
   "Loc": "ws",
   "ChLoc": "文山運動中心",
   "gym": {
-   "Now": 7,
+   "Now": 2,
    "Max": 80
   },
   "swim": {
@@ -83,11 +83,11 @@
   "Loc": "nh",
   "ChLoc": "內湖運動中心",
   "gym": {
-   "Now": 32,
+   "Now": 24,
    "Max": 99
   },
   "swim": {
-   "Now": 5,
+   "Now": 0,
    "Max": 99
   },
   "ice": {
@@ -99,7 +99,7 @@
   "Loc": "lzc",
   "ChLoc": "蘆洲國民運動中心",
   "gym": {
-   "Now": 7,
+   "Now": 3,
    "Max": 61
   },
   "swim": {
@@ -115,11 +115,11 @@
   "Loc": "tcc",
   "ChLoc": "土城國民運動中心",
   "gym": {
-   "Now": 13,
+   "Now": 0,
    "Max": 50
   },
   "swim": {
-   "Now": 63,
+   "Now": 0,
    "Max": 230
   },
   "ice": {
@@ -131,7 +131,7 @@
   "Loc": "xzc",
   "ChLoc": "汐止國民運動中心",
   "gym": {
-   "Now": 6,
+   "Now": 0,
    "Max": 40
   },
   "swim": {
@@ -147,11 +147,11 @@
   "Loc": "yhc",
   "ChLoc": "永和國民運動中心",
   "gym": {
-   "Now": 10,
+   "Now": 2,
    "Max": 55
   },
   "swim": {
-   "Now": 28,
+   "Now": 0,
    "Max": 300
   },
   "ice": {
@@ -163,7 +163,7 @@
   "Loc": "cmc",
   "ChLoc": "朝馬國民運動中心",
   "gym": {
-   "Now": 10,
+   "Now": 5,
    "Max": 90
   },
   "swim": {
@@ -179,11 +179,11 @@
   "Loc": "zlc",
   "ChLoc": "中壢國民運動中心",
   "gym": {
-   "Now": 16,
+   "Now": 0,
    "Max": 90
   },
   "swim": {
-   "Now": 4,
+   "Now": 0,
    "Max": 180
   },
   "ice": {
@@ -195,7 +195,7 @@
   "Loc": "tyc",
   "ChLoc": "桃園國民運動中心",
   "gym": {
-   "Now": 10,
+   "Now": 6,
    "Max": 90
   },
   "swim": {
@@ -211,11 +211,11 @@
   "Loc": "zgc",
   "ChLoc": "竹光國民運動中心",
   "gym": {
-   "Now": 13,
+   "Now": 0,
    "Max": 75
   },
   "swim": {
-   "Now": 33,
+   "Now": 12,
    "Max": 180
   },
   "ice": {
@@ -227,11 +227,11 @@
   "Loc": "lkc",
   "ChLoc": "林口國民運動中心",
   "gym": {
-   "Now": 8,
+   "Now": 0,
    "Max": 60
   },
   "swim": {
-   "Now": 2,
+   "Now": 0,
    "Max": 230
   },
   "ice": {
