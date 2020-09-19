@@ -35,11 +35,11 @@
   "Loc": "xy",
   "ChLoc": "信義運動中心",
   "gym": {
-   "Now": 1,
+   "Now": 0,
    "Max": 65
   },
   "swim": {
-   "Now": 4,
+   "Now": 0,
    "Max": 100
   },
   "ice": {
