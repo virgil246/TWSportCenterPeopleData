@@ -7,7 +7,7 @@
    "Max": 50
   },
   "swim": {
-   "Now": 6,
+   "Now": 0,
    "Max": 100
   },
   "ice": {
@@ -19,11 +19,11 @@
   "Loc": "ng",
   "ChLoc": "南港運動中心",
   "gym": {
-   "Now": 2,
+   "Now": 0,
    "Max": 85
   },
   "swim": {
-   "Now": 1,
+   "Now": 0,
    "Max": 100
   },
   "ice": {
@@ -55,7 +55,7 @@
    "Max": 70
   },
   "swim": {
-   "Now": 15,
+   "Now": 0,
    "Max": 100
   },
   "ice": {
@@ -67,11 +67,11 @@
   "Loc": "ws",
   "ChLoc": "文山運動中心",
   "gym": {
-   "Now": 2,
+   "Now": 0,
    "Max": 80
   },
   "swim": {
-   "Now": 9,
+   "Now": 0,
    "Max": 100
   },
   "ice": {
@@ -83,7 +83,7 @@
   "Loc": "nh",
   "ChLoc": "內湖運動中心",
   "gym": {
-   "Now": 4,
+   "Now": 0,
    "Max": 99
   },
   "swim": {
@@ -131,11 +131,11 @@
   "Loc": "xzc",
   "ChLoc": "汐止國民運動中心",
   "gym": {
-   "Now": 5,
+   "Now": 0,
    "Max": 40
   },
   "swim": {
-   "Now": 17,
+   "Now": 0,
    "Max": 200
   },
   "ice": {
@@ -147,7 +147,7 @@
   "Loc": "yhc",
   "ChLoc": "永和國民運動中心",
   "gym": {
-   "Now": 4,
+   "Now": 0,
    "Max": 55
   },
   "swim": {
@@ -195,11 +195,11 @@
   "Loc": "tyc",
   "ChLoc": "桃園國民運動中心",
   "gym": {
-   "Now": 4,
+   "Now": 0,
    "Max": 90
   },
   "swim": {
-   "Now": 1,
+   "Now": 0,
    "Max": 120
   },
   "ice": {
